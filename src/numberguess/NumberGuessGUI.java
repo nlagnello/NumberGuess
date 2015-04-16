@@ -16,13 +16,13 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class NumberGuessGUI extends javax.swing.JFrame {
 
-    private NumberGuessService guessGame = new NumberGuessService();
+    
     /**
      * Creates new form NumberGuessGUI
      */
     public NumberGuessGUI() {
         initComponents();
-        guessGame.startGame();
+        
     }
 
     /**
@@ -93,7 +93,7 @@ public class NumberGuessGUI extends javax.swing.JFrame {
         String guess = "";
         try{
             
-            guess = guessGame.checkGuess(txtGuess.getText());  
+            guess = checkGuess(txtGuess.getText());  
             lblResult.setText(guess);
         }catch(Exception e){
             lblResult.setText("Error, Invalid Entry in the text field");

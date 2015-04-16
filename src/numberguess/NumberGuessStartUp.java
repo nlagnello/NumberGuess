@@ -18,18 +18,23 @@ public class NumberGuessStartUp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        NumberGuessService game = new NumberGuessService();
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch(Exception e){
         
         }
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new NumberGuessGUI().setVisible(true);
+            java.awt.EventQueue.invokeLater(new Runnable(){
+                public void run(){
+                    new RangeGUI().setVisible(true);
                 }
             });
+            /* Create and display the form */
+//            java.awt.EventQueue.invokeLater(new Runnable() {
+//                public void run() {
+//                    new NumberGuessGUI().setVisible(true);
+//                }
+//            });
     }
     
 }

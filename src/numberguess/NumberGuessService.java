@@ -27,6 +27,7 @@ public class NumberGuessService {
     
     public void InputMinAndMax(String min,String max) throws NumberFormatException{
         range.setMinAndMax(min,max);
+        randNumber = (int)Math.floor((Math.random() * range.getMax() + range.getMin()));
     }
     
         

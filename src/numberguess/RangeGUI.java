@@ -10,12 +10,13 @@ package numberguess;
  * @author Nick
  */
 public class RangeGUI extends javax.swing.JFrame {
-
+private NumberGuessService guessGame = new NumberGuessService();
     /**
      * Creates new form RangeGUI
      */
     public RangeGUI() {
         initComponents();
+        guessGame.startGame();
     }
 
     /**
@@ -104,9 +105,19 @@ public class RangeGUI extends javax.swing.JFrame {
              min = btnSetMin.getText();
              max = btnSetMax.getText();
              
+             guessGame.InputMinAndMax(min, max);
+             
+             
         }catch(Exception e){
             lblSetRange.setText("Error, Invalid Entry in the text field");
         }
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new NumberGuessGUI().setVisible(true);
+            }
+        });
+        
     }//GEN-LAST:event_btnInputRangeActionPerformed
 
     /**

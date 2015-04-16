@@ -19,12 +19,17 @@ public class NumberGuessStartUp {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        try{
+        try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch(Exception e){
+        
         }
-        catch (Exception e){
-            
-        }
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new NumberGuessGUI().setVisible(true);
+                }
+            });
     }
     
 }

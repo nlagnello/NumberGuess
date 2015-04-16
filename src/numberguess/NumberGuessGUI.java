@@ -16,7 +16,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class NumberGuessGUI extends javax.swing.JFrame {
 
-    NumberGuessService guessGame = new NumberGuessService();
+    private NumberGuessService guessGame = new NumberGuessService();
     /**
      * Creates new form NumberGuessGUI
      */
@@ -92,6 +92,7 @@ public class NumberGuessGUI extends javax.swing.JFrame {
 // TODO add your handling code here: 
         String guess = "";
         try{
+            
             guess = guessGame.checkGuess(txtGuess.getText());  
             lblResult.setText(guess);
         }catch(Exception e){
